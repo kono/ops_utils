@@ -1,8 +1,8 @@
-require_relative 'lib/opsutils/version'
+require_relative 'lib/ops_utils/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "opsutils"
-  spec.version       = Opsutils::VERSION
+  spec.name          = "ops_utils"
+  spec.version       = OpsUtils::VERSION
   spec.authors       = ["Kono Hiroshi"]
   spec.email         = ["hiroshi.kono@gmail.com"]
 
