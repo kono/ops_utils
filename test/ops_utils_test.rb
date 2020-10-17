@@ -3,6 +3,7 @@ require 'test_helper'
 # テスト用にOpsUtilsモジュールのメソッドの一部をオーバーライドするためのクラス
 class OpsUtils_fake 
   include OpsUtils
+
 end
 
 class OpsUtilsTest < Test::Unit::TestCase 
@@ -11,6 +12,7 @@ class OpsUtilsTest < Test::Unit::TestCase
   end
 
   test 'has_updated_recently? method' do
-    
+    o = OpsUtils_fake.new
+    assert_true o.has_updated_recently?('testfile', 12)
   end
 end
