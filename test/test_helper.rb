@@ -5,3 +5,4 @@ SimpleCov.start
 require 'ops_utils'
 
 require 'test/unit'
+require 'test/unit/rr'
