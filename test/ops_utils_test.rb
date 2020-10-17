@@ -1,10 +1,5 @@
 require 'test_helper'
 
-# テスト用にOpsUtilsモジュールのメソッドの一部をオーバーライドするためのクラス
-class OpsUtils_fake 
-  include OpsUtils
-
-end
 
 class OpsUtilsTest < Test::Unit::TestCase 
   def test_that_it_has_a_version_number
@@ -18,13 +13,11 @@ class OpsUtilsTest < Test::Unit::TestCase
     end
 
     test 'has_updated_recently? method returns true with params "testfile" and 24 hours' do
-      o = OpsUtils_fake.new
-      assert_true o.has_updated_recently?('testfile', 24)
+      assert_true OpsUtils.has_updated_recently?('testfile', 24)
     end
 
     test 'has_updated_recentry? method returns false with params "testfile" and 12 hours' do
-      o = OpsUtils_fake.new
-      assert_false o.has_updated_recently?('testfile', 12)
+      assert_false OpsUtils.has_updated_recently?('testfile', 12)
     end
   end
 end
